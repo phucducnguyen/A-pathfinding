@@ -65,8 +65,8 @@ class Spot:
     def make_end(self):
         self.color = TURQUOISE
 
-    def reset(self):
-        self.color = WHITE
+    def make_path(self):
+        self.color = PURPLE
 
     def draw(self,win):
         pygame.draw.rect(win,self.color,(self.x, self.y,self.width,self.width))
