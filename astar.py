@@ -2,9 +2,9 @@ import pygame
 import math
 from queue import PriorityQueue
 import os
-os.environ["SDL_VIDEODRIVER"] = "dummy" #work with UNIX -wsl system
+#os.environ["SDL_VIDEODRIVER"] = "dummy" #work with UNIX -wsl system
 
-WIDTH = 800
+WIDTH = 500
 WIN = pygame.display.set_mode((WIDTH,WIDTH))
 pygame.display.set_caption("A* Path Finding Algo")
 
@@ -223,12 +223,12 @@ def main(win,width):
                     end = None
             
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_SPACE and start and end and not started:
+                if event.key == pygame.K_SPACE and start and end :
                     for row in grid:
                         for spot in row:
                             spot.update_neighbors(grid)
 
-                        algorithm(lambda: draw(win,grid,ROWS, width),grid,start,end)
+                    algorithm(lambda: draw(win,grid,ROWS, width),grid,start,end)
 
                 if event.key == pygame.K_c:
                     start = None
